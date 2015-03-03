@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CGPADatabase" Class="MyCGPALinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\CGPADatabase.mdf;Integrated Security=True;User Instance=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CGPADatabaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[100LResultTable]" Member="_100LResultTables">
+    <Type Name="_100LResultTable">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StudentId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FirstSemesterTPU" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SecondSemesterTPU" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FirstSemesterTCU" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SecondSemesterTCU" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FirstSemesterGPA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SecondSemesterGPA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CGPA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="StudentDetail__100LResultTable" Member="StudentDetail" ThisKey="StudentId" OtherKey="StudentId" Type="StudentDetail" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CourseTable" Member="CourseTables">
+    <Type Name="CourseTable">
+      <Column Name="CourseId" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CourseTitle" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CourseUnit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DeptId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LevelId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SemesterId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DepartmentTable_CourseTable" Member="DepartmentTable" ThisKey="DeptId" OtherKey="DeptId" Type="DepartmentTable" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="LevelTable_CourseTable" Member="LevelTable" ThisKey="LevelId" OtherKey="LevelId" Type="LevelTable" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="SemesterTable_CourseTable" Member="SemesterTable" ThisKey="SemesterId" OtherKey="SemesterId" Type="SemesterTable" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DepartmentTable" Member="DepartmentTables">
+    <Type Name="DepartmentTable">
+      <Column Name="DeptId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DeptName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="DepartmentTable_CourseTable" Member="CourseTables" ThisKey="DeptId" OtherKey="DeptId" Type="CourseTable" />
+      <Association Name="DepartmentTable_StudentDetail" Member="StudentDetails" ThisKey="DeptId" OtherKey="DeptId" Type="StudentDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LevelTable" Member="LevelTables">
+    <Type Name="LevelTable">
+      <Column Name="LevelId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LevelName" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="LevelTable_CourseTable" Member="CourseTables" ThisKey="LevelId" OtherKey="LevelId" Type="CourseTable" />
+      <Association Name="LevelTable_StudentDetail" Member="StudentDetails" ThisKey="LevelId" OtherKey="LevelId" Type="StudentDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SemesterTable" Member="SemesterTables">
+    <Type Name="SemesterTable">
+      <Column Name="SemesterId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SemesterName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="SemesterTable_CourseTable" Member="CourseTables" ThisKey="SemesterId" OtherKey="SemesterId" Type="CourseTable" />
+      <Association Name="SemesterTable_StudentDetail" Member="StudentDetails" ThisKey="SemesterId" OtherKey="SemesterId" Type="StudentDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StudentDetails" Member="StudentDetails">
+    <Type Name="StudentDetail">
+      <Column Name="StudentId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LevelId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DeptId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SemesterId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="StudentDetail__100LResultTable" Member="_100LResultTables" ThisKey="StudentId" OtherKey="StudentId" Type="_100LResultTable" />
+      <Association Name="DepartmentTable_StudentDetail" Member="DepartmentTable" ThisKey="DeptId" OtherKey="DeptId" Type="DepartmentTable" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="LevelTable_StudentDetail" Member="LevelTable" ThisKey="LevelId" OtherKey="LevelId" Type="LevelTable" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="SemesterTable_StudentDetail" Member="SemesterTable" ThisKey="SemesterId" OtherKey="SemesterId" Type="SemesterTable" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+</Database>

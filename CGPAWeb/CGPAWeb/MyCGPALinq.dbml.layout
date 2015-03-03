@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="MyCGPALinq">
+  <DataContextMoniker Name="/MyCGPALinqDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ccab489f-1ebd-4bf4-984c-8f4ad55c3e5e" absoluteBounds="6.25, 3.375, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/MyCGPALinqDataContext/_100LResultTable" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ced2ee61-a775-4d6e-9799-7b2e71885ef6" absoluteBounds="6.265, 3.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d770bc40-73dc-4c17-8176-19e59bcf3463" absoluteBounds="3.5, 0.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/MyCGPALinqDataContext/CourseTable" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6dd1a54e-5b58-44a1-91af-26ce4242805e" absoluteBounds="3.515, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b508102c-e929-4920-a3f3-7cd54ce6480d" absoluteBounds="0.75, 4.125, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/MyCGPALinqDataContext/DepartmentTable" />
+      <nestedChildShapes>
+        <elementListCompartment Id="64caf037-522d-4a8e-8a60-18cab668ae10" absoluteBounds="0.765, 4.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="54a6cdbb-3874-47ea-97c1-76fa7934eae5" absoluteBounds="0.75, 1.625, 2, 1.1939925130208338">
+      <DataClassMoniker Name="/MyCGPALinqDataContext/LevelTable" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c1c50cac-f6a3-4649-944f-c979be4aafdf" absoluteBounds="0.765, 2.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="57401dd0-c3d4-497b-a0dd-b5133379c006" absoluteBounds="0.75, 6.625, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/MyCGPALinqDataContext/SemesterTable" />
+      <nestedChildShapes>
+        <elementListCompartment Id="50b980cd-caad-462e-8dbe-ad151ad2b227" absoluteBounds="0.765, 7.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aaf227a1-beb4-4406-824d-83505c1fba0c" absoluteBounds="3.5, 4, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/MyCGPALinqDataContext/StudentDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="14c6af4c-9a33-4787-b3a3-3647f58db7f9" absoluteBounds="3.515, 4.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 4.12591745577925); (3.125 : 3.75091745577925); (3.125 : 1.73159912109375); (3.19791666666667 : 1.73159912109375 : JumpStart); (3.36458333333333 : 1.73159912109375 : JumpEnd); (3.5 : 1.73159912109375)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MyCGPALinqDataContext/DepartmentTable/DepartmentTable_CourseTable" />
+      <nodes>
+        <classShapeMoniker Id="b508102c-e929-4920-a3f3-7cd54ce6480d" />
+        <classShapeMoniker Id="d770bc40-73dc-4c17-8176-19e59bcf3463" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.28489868164062); (3.04166666666667 : 2.28489868164062 : JumpStart); (3.36458333333333 : 2.28489868164062 : JumpEnd); (3.5 : 2.28489868164062)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MyCGPALinqDataContext/LevelTable/LevelTable_CourseTable" />
+      <nodes>
+        <classShapeMoniker Id="54a6cdbb-3874-47ea-97c1-76fa7934eae5" />
+        <classShapeMoniker Id="d770bc40-73dc-4c17-8176-19e59bcf3463" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.65714495227364); (3.28125 : 6.12589495227364); (3.28125 : 1.20954756054688); (3.5 : 1.20954756054688)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MyCGPALinqDataContext/SemesterTable/SemesterTable_CourseTable" />
+      <nodes>
+        <classShapeMoniker Id="57401dd0-c3d4-497b-a0dd-b5133379c006" />
+        <classShapeMoniker Id="d770bc40-73dc-4c17-8176-19e59bcf3463" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.78929768880208); (6.25 : 4.78929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MyCGPALinqDataContext/StudentDetail/StudentDetail__100LResultTable" />
+      <nodes>
+        <classShapeMoniker Id="aaf227a1-beb4-4406-824d-83505c1fba0c" />
+        <classShapeMoniker Id="ccab489f-1ebd-4bf4-984c-8f4ad55c3e5e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.75370748440004); (3.13541666666667 : 4.75370748440004 : JumpStart); (3.36458333333333 : 4.75370748440004 : JumpEnd); (3.5 : 4.75370748440004)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MyCGPALinqDataContext/DepartmentTable/DepartmentTable_StudentDetail" />
+      <nodes>
+        <classShapeMoniker Id="b508102c-e929-4920-a3f3-7cd54ce6480d" />
+        <classShapeMoniker Id="aaf227a1-beb4-4406-824d-83505c1fba0c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.78776401652644); (3.06607443490112 : 3.10383845142756 : JumpStart); (3.18392556509888 : 3.22168958162532 : JumpEnd); (3.21875 : 3.25651401652644); (3.21875 : 5.1974034310021); (3.5 : 5.1974034310021)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MyCGPALinqDataContext/LevelTable/LevelTable_StudentDetail" />
+      <nodes>
+        <classShapeMoniker Id="54a6cdbb-3874-47ea-97c1-76fa7934eae5" />
+        <classShapeMoniker Id="aaf227a1-beb4-4406-824d-83505c1fba0c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.26932123264723); (4.5 : 7.26932123264723); (4.5 : 5.57859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MyCGPALinqDataContext/SemesterTable/SemesterTable_StudentDetail" />
+      <nodes>
+        <classShapeMoniker Id="57401dd0-c3d4-497b-a0dd-b5133379c006" />
+        <classShapeMoniker Id="aaf227a1-beb4-4406-824d-83505c1fba0c" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
